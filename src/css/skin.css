@@ -1,0 +1,10 @@
+.login{width:100%;height:100%;background:url(../assets/login-bg.png) no-repeat;background-size:cover;position: absolute;z-index: 0;overflow-y: auto;overflow-x: hidden;}
+.welcome{width:100%;margin:25% 0; text-align: center;color: #fff;font-size: 20px;}
+.welcome img{width:100%;}
+.login-inp{margin:0 30px 15px 30px;border:1px solid #f0f0f0;border-radius:25px;padding: 0 10px; display: flex;}
+.login-inp label{width:5em;text-align:center;display:inline-block;color:#fff;line-height: 44px;}
+.login-inp input{color:#fff;background-color:transparent;border:none;outline: none; flex: 1; padding-left: 10px;}
+.login-inp a{display:block;width:100%;text-align:center;line-height:40px;color:#fff;font-size:16px;letter-spacing:5px;}
+.loginbtn{background: #51b2f9;border: none; box-shadow: 0px 1px 2px #ccc; margin-top: 20px; margin-bottom: 0;}
+.login-txt{text-align:center;color:#fff;margin-top: 20px;}
+.login-txt a{color:#fff;padding:0 5px; display: inline-block; line-height: 30px;}
