@@ -1,7 +1,7 @@
 import axios from 'axios'
 // 增加默认的请求的路径
 // 拦截器
-axios.defaults.baseURL = 'http://47.93.195.202:8090';
+axios.defaults.baseURL = '接口url';
 axios.interceptors.response.use((res)=>{
   return res.data; // 在这里统一拦截结果 把结果处理成res.data
 });
