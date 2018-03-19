@@ -36,4 +36,7 @@ export default {
 	#app{
 		min-height: 100%;
 	}
+	.usercomment p{
+        text-indent: 2em;
+    }
 </style>

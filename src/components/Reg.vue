@@ -51,7 +51,7 @@
                 let _this = this;
                 setTimeout(function(){  
                     document.getElementsByTagName('body')[0].style.height = window.innerHeight+'px';  
-                },20);
+                },200);
             }
         },
         computed: {},

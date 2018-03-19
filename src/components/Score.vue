@@ -4,7 +4,7 @@
     	<div class="answertext">
     		<p>尊敬的{{getUserName}}：</p>
             <p style="text-indent: 2em;">感谢您的配合。</p>
-    		<p v-html="userComment.OneScoreComment" style="text-indent: 2em;"></p>
+    		<div v-html="userComment.OneScoreComment" class="usercomment"></div>
     	</div>
         <div class="answerbtn"><router-link to="/">开始答题</router-link></div>
     </div>
@@ -18,7 +18,8 @@
             		StypeID:this.$route.params.stypeId
             	},
                 getTypeName:'',
-                getUserName:''
+                getUserName:'',
+                aaa:'<p>sddfsdsds</p>'
             }
         },
         created() {

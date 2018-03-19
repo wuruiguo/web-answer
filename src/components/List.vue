@@ -155,14 +155,15 @@
 </script>
 <style scoped>
     .list{
-    	padding: 30px 20px;
+    	padding: 20px 20px 60px 20px;
     	position: relative;
+        overflow: auto;
     }
     .listtitle{
 		font-size: 16px;
 		color: #333;
 		font-weight: bold;
-		margin:20px 0;
+		margin-bottom:20px;
     }
     .typename{
     	color: #333;

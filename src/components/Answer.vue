@@ -30,6 +30,7 @@
 		height: 100%;
 		background: url(../assets/bg.png);
 		width: 100%;
+        overflow-y:auto;
 	}
 	.answertitle{
 		margin-top: 25%;
