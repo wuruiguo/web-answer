@@ -2,10 +2,10 @@
     <div class="login">
         <div class="welcome" style="padding:20% 0">欢迎注册心理测评系统</div>
         <div class="login-form">
-        	<div class="login-inp"><label>姓&nbsp;&nbsp;&nbsp;&nbsp;名</label><input type="text" placeholder="" v-model="RegisterData.UserName" ref="chatpannel" @focus="focus"></div>
-            <div class="login-inp"><label>手&nbsp;机&nbsp;号</label><input type="text" placeholder="" v-model="RegisterData.Phone" maxlength="11" ref="chatpannel" @focus="focus"></div>
-            <div class="login-inp"><label>密&nbsp;&nbsp;&nbsp;&nbsp;码</label><input type="password" placeholder="" v-model="RegisterData.UserPwd" ref="chatpannel" @focus="focus"></div>
-            <div class="login-inp"><label>确认密码</label><input type="password" placeholder=""  v-model="confirmUserPwd" ref="chatpannel" @focus="focus"></div>
+        	<div class="login-inp"><label>姓&nbsp;&nbsp;&nbsp;&nbsp;名</label><input type="text" placeholder="" v-model="RegisterData.UserName" ref="chatpannel"></div>
+            <div class="login-inp"><label>手&nbsp;机&nbsp;号</label><input type="text" placeholder="" v-model="RegisterData.Phone" maxlength="11" ref="chatpannel"></div>
+            <div class="login-inp"><label>密&nbsp;&nbsp;&nbsp;&nbsp;码</label><input type="password" placeholder="" v-model="RegisterData.UserPwd" ref="chatpannel"></div>
+            <div class="login-inp"><label>确认密码</label><input type="password" placeholder=""  v-model="confirmUserPwd" ref="chatpannel"></div>
             <div class="login-inp loginbtn" @click="postRegisterUser()"><a href="javascript:void(0)">立即注册</a></div>
         </div>
     </div>
@@ -46,13 +46,13 @@
         				this.$Message.error(ErrorMessage);
         			}
         		}
-        	},
-            focus(){
+        	}
+            /*focus(){
                 let _this = this;
                 setTimeout(function(){  
                     document.getElementsByTagName('body')[0].style.height = window.innerHeight+'px';  
                 },200);
-            }
+            }*/
         },
         computed: {},
         mounted() {

@@ -2,8 +2,8 @@
     <div class="login">
         <div class="welcome"><img src="../assets/welcome.png"></div>
         <div class="login-form">
-            <div class="login-inp"><label>手机号</label><input type="text" v-model="LoginData.Phone" maxlength="11" ref="chatpannel" @focus="focus"></div>
-            <div class="login-inp"><label>密&nbsp;&nbsp;码</label><input type="password" v-model="LoginData.UserPwd" ref="chatpannel" @focus="focus"></div>
+            <div class="login-inp"><label>手机号</label><input type="text" v-model="LoginData.Phone" maxlength="11" ref="chatpannel"></div>
+            <div class="login-inp"><label>密&nbsp;&nbsp;码</label><input type="password" v-model="LoginData.UserPwd" ref="chatpannel"></div>
             <div class="login-inp loginbtn" @click="postUserLogin()"><a href="javascript:void(0)">立即登录</a></div>
         </div>
         <div class="login-txt"><router-link to="/register">前往注册</router-link><a href="#" style="display:none">|忘记密码？</a></div>
@@ -38,13 +38,13 @@
                         this.$Message.error(ErrorMessage);
                     }
                 }
-            },
-            focus(){
+            }
+            /*focus(){
                 let _this = this;
                 setTimeout(function(){  
                     document.getElementsByTagName('body')[0].style.height = window.innerHeight+'px';  
                 },200);
-            }
+            }*/
         },
         computed: {},
         mounted() {
