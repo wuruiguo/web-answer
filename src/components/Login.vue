@@ -33,6 +33,7 @@
                     if(ErrorCode == 1){
                         sessionStorage.setItem('userPower',Data.UserPower);
                         sessionStorage.setItem('userName',Data.UserName);
+                        sessionStorage.setItem('userId',Data.ID);
                         this.$router.push('/');
                     }else{
                         this.$Message.error(ErrorMessage);

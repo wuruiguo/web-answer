@@ -32,3 +32,9 @@ export const SubmitSname = (data) =>{
 export const getUserComment = (data) =>{
   return axios.post('/api/SubjectTypeApi/GetUserCommentUser',data)
 };
+export const getUserList = (data) =>{
+  return axios.post('/api/SnameApi/GetUserSpecials',data)
+};
+export const getUserSingle = (data) =>{
+  return axios.post('/api/SnameApi/GetUserSingle',data)
+};

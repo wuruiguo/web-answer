@@ -8,6 +8,8 @@ const Answer = r => require.ensure([], () => r(require('../components/Answer.vue
 const List = r => require.ensure([], () => r(require('../components/List.vue')),'main');
 const Score = r => require.ensure([], () => r(require('../components/Score.vue')),'main');
 const ScoreList = r => require.ensure([], () => r(require('../components/ScoreList.vue')),'main');
+const AnswerList = r => require.ensure([], () => r(require('../components/AnswerList.vue')),'main');
+const UserScore = r => require.ensure([], () => r(require('../components/UserScore.vue')),'main');
 
 Vue.use(Router)
 
@@ -40,6 +42,14 @@ export default new Router({
     {
       path: '/scorelist/:stypeId',
       component: ScoreList
+    },
+    {
+      path: '/answerlist',
+      component: AnswerList
+    },
+    {
+      path: '/userscore/:specialId',
+      component: UserScore
     }
   ]
 })

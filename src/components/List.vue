@@ -29,6 +29,7 @@
 			          prevEl: '.swiper-button-prev'
 			        },
 			        touchRatio: 0.5,
+                    autoHeight: true, //高度随内容变化
 			        on:{
 					    slideChange:function(){
 					    	_this.SnameNumber = this.activeIndex+1;
@@ -63,7 +64,7 @@
 		        swiperSlides: [],
 		        SnamePagesData:{
         			pageNumber: 1,
-        			pageSize: 10,
+        			pageSize: 20,
         			id:this.$route.params.stypeId
         		},
         		AnswerList:{
@@ -146,7 +147,7 @@
         mounted() {
         	setTimeout(() => {
                 this.getTypeName = sessionStorage.getItem('typeName');
-            },0);
+            },100);
             this.$refs.vueSwiper.swiper.allowSlideNext = false;
         },
         components: {
@@ -199,9 +200,10 @@
 		color: #fff;
 		font-weight: bold;
 		border-radius: 5px;
+        margin-top: 15px;
     }
     .swiper-container{
-    	min-height: 350px;
+    	min-height: 335px;
     }
     .button-prev{
 		float: left;
@@ -224,5 +226,11 @@
     	background: #2fb8e2;
     	text-align: center;
     	font-size: 16px;
+    }
+    .list .swiper-slide{
+        visibility: hidden;
+    }
+    .list .swiper-slide-active{
+        visibility: visible;
     }
 </style>

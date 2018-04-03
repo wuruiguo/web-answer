@@ -41,7 +41,7 @@
         mounted() {
         	setTimeout(() => {
                 this.getTypeName = sessionStorage.getItem('typeName');
-            },0);
+            },100);
         }
     }
 </script>

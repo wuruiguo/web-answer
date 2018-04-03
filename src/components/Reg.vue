@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <div class="welcome" style="padding:20% 0">欢迎注册心理测评系统</div>
+        <div class="welcome" style="padding:20% 0">欢迎注册刑侦人员心理测评系统</div>
         <div class="login-form">
         	<div class="login-inp"><label>姓&nbsp;&nbsp;&nbsp;&nbsp;名</label><input type="text" placeholder="" v-model="RegisterData.UserName" ref="chatpannel"></div>
             <div class="login-inp"><label>手&nbsp;机&nbsp;号</label><input type="text" placeholder="" v-model="RegisterData.Phone" maxlength="11" ref="chatpannel"></div>

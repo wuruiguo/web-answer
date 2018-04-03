@@ -1,15 +1,21 @@
 <template>
-    <div class="box">
-      <div class="listL">
-      	<ul>
-      		<li v-for="(maxlist,index) in maxTypeList" @click="getSubjectList(maxlist.MaxID,index)" :class="{'active':index==activeIndex}"><div id="triangle-right"></div>{{maxlist.MaxName}}</li>
-      	</ul>
-      </div>
-      <div class="listR">
-      	<ul>
-      		<li v-for="subjectlist in SubjectList" @click="storageTypeComment(subjectlist.TypeComment,subjectlist.TypeName)"><router-link :to="userType==1?'/scorelist/'+subjectlist.StypeID:'/answer/'+subjectlist.StypeID">{{subjectlist.TypeName}}</router-link></li>
-      	</ul>
-      </div>
+    <div>
+        <div class="box">
+          <div class="listL" :style="userType == 0?'padding-bottom: 40px':''">
+          	<ul>
+          		<li v-for="(maxlist,index) in maxTypeList" @click="getSubjectList(maxlist.MaxID,index)" :class="{'active':index==activeIndex}"><div id="triangle-right"></div>{{maxlist.MaxName}}</li>
+          	</ul>
+          </div>
+          <div class="listR" :style="userType == 0?'padding-bottom: 40px':''">
+          	<ul>
+          		<li v-for="subjectlist in SubjectList" @click="storageTypeComment(subjectlist.TypeComment,subjectlist.TypeName)"><router-link :to="userType==1?'/scorelist/'+subjectlist.StypeID:'/answer/'+subjectlist.StypeID">{{subjectlist.TypeName}}</router-link></li>
+          	</ul>
+          </div>
+        </div>
+        <div class="footmenu" v-if="userType == 0">
+            <router-link to="/">测评</router-link>
+            <router-link to="/answerlist">我的</router-link>
+        </div>
     </div>
 </template>
 <script>
@@ -54,7 +60,7 @@
         mounted() {
             setTimeout(() => {
                 this.userType = sessionStorage.getItem('userPower');
-            },0);
+            },100);
         }
     }
 </script>
@@ -72,7 +78,9 @@
 		width: 120px;
 		background: #f1f1f1;
 		height: 100%;
-		box-shadow:-2px 0px 2px #dcdcdc inset
+		box-shadow:-2px 0px 2px #dcdcdc inset;
+        overflow-x: hidden;
+        overflow-y: auto;
 	}
 	.listL li{
 		font-size: 1.2em;
@@ -114,7 +122,7 @@
 		color: #4a4a4a;
 	}
 	.listR li a{
-		padding: 20px 0;
+		padding: 15px 0;
 		display: block;
 		color: #666;
 	}

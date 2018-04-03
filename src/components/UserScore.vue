@@ -3,10 +3,8 @@
     	<div class="answertitle">{{getTypeName}}测评结果</div>
     	<div class="answertext">
     		<p>尊敬的{{getUserName}}：</p>
-            <p style="text-indent: 2em;">感谢您的配合。</p>
-    		<div v-html="userComment.OneScoreComment" class="usercomment"></div>
+    		<div v-html="userComment.SContent" class="usercomment"></div>
     	</div>
-        <div class="answerbtn"><router-link to="/">开始答题</router-link></div>
     </div>
 </template>
 <script>
@@ -14,19 +12,19 @@
         data() {
             return {
             	userComment:'',
-            	userCommentData:{
-            		StypeID:this.$route.params.stypeId
+            	userUserSingleData:{
+            		id:this.$route.params.specialId
             	},
                 getTypeName:'',
                 getUserName:''
             }
         },
         created() {
-        	this.getUserCommentData();
+        	this.getUserSingleData();
         },
         methods: {
-        	async getUserCommentData(){
-        		let {Data} = await this.$http.getUserComment(this.userCommentData)
+        	async getUserSingleData(){
+        		let {Data} = await this.$http.getUserSingle(this.userUserSingleData)
         		this.userComment = Data;
         	}
         },

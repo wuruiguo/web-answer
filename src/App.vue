@@ -39,4 +39,26 @@ export default {
 	.usercomment p{
         text-indent: 2em;
     }
+    .footmenu{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        border-top: 1px solid #dcdcdc;
+        display: flex;
+        flex-direction: row;
+    }
+    .footmenu a{
+        text-align: center;
+        line-height: 40px;
+        font-size:1.2em;
+        color: #666;
+        flex: 1;
+        border-right: 1px solid #dcdcdc;
+    }
+    .router-link-exact-active.router-link-active{
+        background: #6dbcde;
+        color: #fff;
+    }
 </style>

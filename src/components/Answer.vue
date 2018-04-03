@@ -20,7 +20,7 @@
         mounted() {
             setTimeout(() => {
                 this.getTypeComment = sessionStorage.getItem('typeComment');
-            },0);
+            },100);
         }
     }
 </script>
