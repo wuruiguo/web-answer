@@ -92,7 +92,7 @@
         		if(this.SnamePagesData.pageNumber == 1){
         			this.swiperSlides = Data;
         		}else{
-        			Data.forEach((item,index)=>this.swiperSlides.push(item));
+        			this.swiperSlides = [...this.swiperSlides,...Data];
         		}
         		this.totalCount = TotalCount;
         	},
@@ -104,18 +104,17 @@
         			StypeID:StypeID,
         			EvaluatingMsg:Comment
         		}
-        		let answer = this.submitAnswerList.find((item) => item.Sid == Sid );
-        		if (answer) {
-        			if (answer.AnswerComment == AnswerComment) return;
-					this.submitAnswerList = this.submitAnswerList.map((item)=>{
-					    if(item.Sid == Sid){
-						    return this.AnswerList
-					    }
-					    return item;
-				    });
-        		} else {
-        			this.submitAnswerList.push(this.AnswerList);
-        		}			
+                let answer = false;
+                this.submitAnswerList = this.submitAnswerList.map(item => {
+                    if (item.Sid === this.AnswerList.Sid) {
+                        answer = true;
+                        return this.AnswerList;
+                    }
+                  return item;
+                });
+                if (!answer) {
+                  this.submitAnswerList.push(this.AnswerList);
+                }		
 				this.$refs.vueSwiper.swiper.allowSlideNext = true;
         	},
         	async submitData(){

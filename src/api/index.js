@@ -1,7 +1,7 @@
 import axios from 'axios'
 // 增加默认的请求的路径
 // 拦截器
-axios.defaults.baseURL = 'http://47.93.195.202:8090';
+axios.defaults.baseURL = 'http://47.94.105.145:8090';
 axios.interceptors.response.use((res)=>{
   return res.data; // 在这里统一拦截结果 把结果处理成res.data
 });
@@ -37,4 +37,7 @@ export const getUserList = (data) =>{
 };
 export const getUserSingle = (data) =>{
   return axios.post('/api/SnameApi/GetUserSingle',data)
+};
+export const setUserPassword = (data) =>{
+  return axios.post('/api/AdminOp/AdminSetPwd',data)
 };

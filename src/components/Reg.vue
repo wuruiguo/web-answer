@@ -30,7 +30,7 @@
         },
         methods: {
         	async postRegisterUser(){
-        		let myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+        		let myreg=/^[1][3,4,5,7,8,9][0-9]{9}$/;
         		if(this.RegisterData.UserName =='' || this.RegisterData.UserPwd =='' || this.RegisterData.Phone ==''){
         			this.$Message.error('注册信息不能为空！');
         		}else if(!myreg.test(this.RegisterData.Phone)){
@@ -41,6 +41,8 @@
         			let {Data,ErrorCode,ErrorMessage} = await this.$http.registerUser(this.RegisterData);
         			if(ErrorCode == 1){
                         sessionStorage.setItem('userPower',Data.UserPower);
+                        sessionStorage.setItem('userName',Data.UserName);
+                        sessionStorage.setItem('userId',Data.ID);
                         this.$router.push('/');
         			}else{
         				this.$Message.error(ErrorMessage);

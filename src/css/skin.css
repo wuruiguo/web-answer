@@ -1,5 +1,5 @@
 .login{width:100%;min-height:100%; position:absolute;background:url(../assets/login-bg.png) no-repeat;background-size:cover;}
-.welcome{width:100%;padding:25% 0; text-align: center;color: #fff;font-size: 20px;}
+.welcome{width:100%;padding:22% 0; text-align: center;color: #fff;font-size: 20px;}
 .welcome img{width:100%;}
 .login-inp{margin:0 30px 15px 30px;border:1px solid #f0f0f0;border-radius:25px;padding: 0 10px; display: flex;}
 .login-inp label{width:5em;text-align:center;display:inline-block;color:#fff;line-height: 44px;}
