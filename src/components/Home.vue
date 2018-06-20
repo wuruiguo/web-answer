@@ -39,7 +39,7 @@
         	async getMaxList(){
         		let {Data} = await this.$http.getMaxTypePage(this.maxTypeData)
         		this.maxTypeList = Data;
-        		await this.getSubjectList(Data.length,0);
+        		await this.getSubjectList(Data[0].MaxID,0);
         	},
         	async getSubjectList(maxid,index){
         		this.activeIndex = index;
