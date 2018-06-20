@@ -1,9 +1,17 @@
 import axios from 'axios'
+import router from '../router'
+import { Message } from 'iview'
 // 增加默认的请求的路径
 // 拦截器
 axios.defaults.baseURL = 'http://47.94.105.145:8090';
-axios.interceptors.response.use((res)=>{
+axios.interceptors.response.use(res => {
+  if(res.data.ErrorCode == 188){
+    Message.error(res.data.ErrorMessage)
+    router.push('/login');
+  }
   return res.data; // 在这里统一拦截结果 把结果处理成res.data
+},error => {
+  return Promise.reject(error);
 });
 
 export const getMaxTypePage = (data) =>{

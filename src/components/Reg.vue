@@ -40,10 +40,11 @@
         		}else{
         			let {Data,ErrorCode,ErrorMessage} = await this.$http.registerUser(this.RegisterData);
         			if(ErrorCode == 1){
-                        sessionStorage.setItem('userPower',Data.UserPower);
+                        /*sessionStorage.setItem('userPower',Data.UserPower);
                         sessionStorage.setItem('userName',Data.UserName);
-                        sessionStorage.setItem('userId',Data.ID);
-                        this.$router.push('/');
+                        sessionStorage.setItem('userId',Data.ID);*/
+                        this.$Message.success(ErrorMessage);
+                        this.$router.push('/login');
         			}else{
         				this.$Message.error(ErrorMessage);
         			}
