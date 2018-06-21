@@ -126,7 +126,7 @@
                     this.isDisabled = true;
         			let {ErrorCode,ErrorMessage} = await this.$http.SubmitSname(this.submitAnswerList);
         			if(ErrorCode === 1){
-                        this.isDisabled = false;
+                        //this.isDisabled = false;
                         this.$router.push('/score/'+this.$route.params.stypeId);
                     }else{
                         this.isDisabled = false;
