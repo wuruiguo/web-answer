@@ -16,7 +16,8 @@
 		</swiper>
 		<div @click="prevto()" class="button-prev" :class="prevclasss?'buttonactive':''">上一题</div>
 		<div @click="nextto()" class="button-next" :class="nevtclasss?'buttonactive':''">下一题</div>
-    	<div class="submitbtn" @click="submitData()" v-show="isSubmitBtn == true">提交答案</div>    	<div class="submitbtn" v-show="isSubmitBtn == false">题目：{{SnameNumber}}/{{totalCount}}</div>
+    	<button class="submitbtn" @click="submitData()" v-show="isSubmitBtn == true" :disabled="isDisabled">提交答案</button>
+        <div class="submitbtn" v-show="isSubmitBtn == false">题目：{{SnameNumber}}/{{totalCount}}</div>
     </div>
 </template>
 <script>
@@ -30,6 +31,8 @@
 			        },
 			        touchRatio: 0.5,
                     autoHeight: true, //高度随内容变化
+                    observer: true,//修改swiper自己或子元素时，自动初始化swiper  
+                    observeParents: true,//修改swiper的父元素时，自动初始化swiper 
 			        on:{
 					    slideChange:function(){
 					    	_this.SnameNumber = this.activeIndex+1;
@@ -80,7 +83,8 @@
         		isSubmitBtn:false,
         		getTypeName:'',
         		prevclasss:true,
-        		nevtclasss:false
+        		nevtclasss:false,
+                isDisabled:false
             }
         },
         created() {
@@ -119,10 +123,13 @@
         	},
         	async submitData(){
         		if(this.submitAnswerList.length === this.totalCount){
+                    this.isDisabled = true;
         			let {ErrorCode,ErrorMessage} = await this.$http.SubmitSname(this.submitAnswerList);
         			if(ErrorCode === 1){
+                        this.isDisabled = false;
                         this.$router.push('/score/'+this.$route.params.stypeId);
                     }else{
+                        this.isDisabled = false;
                         this.$Message.error(ErrorMessage);
                     }
         		}else{
