@@ -4,7 +4,7 @@
         <div class="login-form">
             <div class="login-inp"><label>手&nbsp;机&nbsp;号</label><input type="text" v-model="LoginData.Phone" maxlength="11" ref="chatpannel"></div>
             <div class="login-inp"><label>密&nbsp;&nbsp;&nbsp;&nbsp;码</label><input type="password" v-model="LoginData.UserPwd" ref="chatpannel"></div>
-            <div class="login-inp"><label>公有密码</label><input type="password" v-model="LoginData.publicPwd" ref="chatpannel"></div>
+            <div class="login-inp"><label>口&nbsp;&nbsp;&nbsp;&nbsp;令</label><input type="password" v-model="LoginData.publicPwd" ref="chatpannel"></div>
             <div class="login-inp loginbtn" @click="postUserLogin()"><a href="javascript:void(0)">立即登录</a></div>
         </div>
         <div class="login-txt"><router-link to="/register">前往注册</router-link><router-link to="/setpwd">|&nbsp;管理员设定</router-link></div>

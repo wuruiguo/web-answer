@@ -3,7 +3,7 @@ import router from '../router'
 import { Message } from 'iview'
 // 增加默认的请求的路径
 // 拦截器
-axios.defaults.baseURL = 'http://47.94.105.145:8090';
+//axios.defaults.baseURL = 'http://47.94.105.145:8090';
 axios.interceptors.response.use(res => {
   if(res.data.ErrorCode == 188){
     router.push('/login');
